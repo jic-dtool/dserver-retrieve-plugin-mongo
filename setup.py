@@ -5,8 +5,8 @@ version = "0.1.0"
 readme = open('README.rst').read()
 
 setup(
-    name="dtool-lookup-server-retrieve-mongo-plugin",
-    packages=["dtool_lookup_server_retrieve_mongo_plugin"],
+    name="dtool-lookup-server-retrieve-plugin-mongo",
+    packages=["dtool_lookup_server_retrieve_plugin_mongo"],
     version=version,
     description="Retrieve plugin for dtool-lookup-server using mongodb",
     long_description=readme,

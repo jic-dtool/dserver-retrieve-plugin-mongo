@@ -18,7 +18,7 @@ from dtoolcore import DataSetCreator, DataSet
 from dtool_lookup_server.utils import generate_dataset_info
 
 # This tested in this module.
-from dtool_lookup_server_retrieve_mongo_plugin.utils_retrieve import MongoRetrieve
+from dtool_lookup_server_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
 
 
 MONGO_URI = "mongodb://localhost:27017"
