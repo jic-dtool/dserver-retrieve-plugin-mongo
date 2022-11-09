@@ -1,6 +1,6 @@
 from setuptools import setup
 
-url = ""
+url = "https://github.com/jic-dtool/dtool-lookup-server-retrieve-plugin-mongo"
 version = "0.1.0"
 readme = open('README.rst').read()
 
