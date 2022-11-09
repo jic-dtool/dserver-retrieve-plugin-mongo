@@ -19,6 +19,11 @@ setup(
         "dtoolcore>=3.18.0",
         "dtool-lookup-server",   # Add version constraints once v1 of dtool-lookup-server-has been released  # NOQA
     ],
+    entry_points={
+        "dtool_lookup_server.retrieve": [
+            "MongoRetrieve=dtool_lookup_server_retrieve_plugin_mongo.utils_retrieve:MongoRetrieve",  # NOQA
+        ],
+    },
     download_url="{}/tarball/{}".format(url, version),
     license="MIT"
 )
