@@ -14,7 +14,11 @@ setup(
     author="Tjelvar Olsson",
     author_email="tjelvar.olsson@gmail.com",
     url=url,
-    install_requires=[],
+    install_requires=[
+        "pymongo",
+        "dtoolcore>=3.18.0",
+        "dtool-lookup-server",   # Add version constraints once v1 of dtool-lookup-server-has been released  # NOQA
+    ],
     download_url="{}/tarball/{}".format(url, version),
     license="MIT"
 )
