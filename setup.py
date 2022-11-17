@@ -17,6 +17,7 @@ setup(
     install_requires=[
         "pymongo",
         "dtoolcore>=3.18.0",
+        "markupsafe==2.0.1",
         "dtool-lookup-server",   # Add version constraints once v1 of dtool-lookup-server-has been released  # NOQA
     ],
     entry_points={
