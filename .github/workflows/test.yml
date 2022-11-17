@@ -38,7 +38,7 @@ jobs:
         # pip install --upgrade setuptools wheel setuptools-scm[toml] importlib-metadata
         pip install flake8 pytest pytest-cov
 
-    - name: Install server refactor and and retrieve plugin
+    - name: Install server refactor and search plugin
       run: | 
         # This should move into the strategy matrix once released
         pip install git+https://github.com/jic-dtool/dtool-lookup-server.git@mongo-refactor
