@@ -60,7 +60,8 @@ class MongoRetrieve(RetrieveABC):
     def init_app(self, app):
         try:
             self._mongo_uri = app.config["RETRIEVE_MONGO_URI"]
-            self.client = MongoClient(self._mongo_uri)
+            self.client = MongoClient(self._mongo_uri,
+                                      uuidRepresentation='standard')
         except KeyError:
             raise(RuntimeError("Please set the RETRIEVE_MONGO_URI environment variable"))  # NOQA
 
