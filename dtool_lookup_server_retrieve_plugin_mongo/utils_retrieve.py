@@ -11,7 +11,7 @@ from dtool_lookup_server import RetrieveABC, ValidationError, UnknownURIError
 
 from dtool_lookup_server.date_utils import (
     extract_created_at_as_datetime,
-    extract_frozen_at_as_datatime,
+    extract_frozen_at_as_datetime,
 )
 
 
@@ -29,7 +29,7 @@ def _register_dataset_descriptive_metadata(collection, dataset_info):
     # get mangled by the datetime replacements.
     dataset_info = dataset_info.copy()
 
-    frozen_at = extract_frozen_at_as_datatime(dataset_info)
+    frozen_at = extract_frozen_at_as_datetime(dataset_info)
     created_at = extract_created_at_as_datetime(dataset_info)
 
     dataset_info["frozen_at"] = frozen_at
