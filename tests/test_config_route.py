@@ -16,12 +16,24 @@ def test_config_info_route(tmp_app_with_users, snowwhite_token):  # NOQA
     assert r.status_code == 200
 
     expected_content = {
-        'dtool_lookup_server_retrieve_plugin_mongo': {
-            'retrieve_mongo_collection': 'datasets',
-            'retrieve_mongo_db': 'dtool_info',
-            'retrieve_mongo_uri': 'mongodb://localhost:27017/',
-            'version': dtool_lookup_server_retrieve_plugin_mongo.__version__
-        }
+          'retrieve_mongo_collection': 'datasets',
+          'retrieve_mongo_uri': 'mongodb://localhost:27017/',
+    }
+
+    response = json.loads(r.data.decode("utf-8"))
+
+    assert compare_nested(expected_content, response)
+
+
+def test_config_version_route(tmp_app_with_users):  # NOQA
+
+    r = tmp_app_with_users.get(
+        "/config/versions",
+    )
+    assert r.status_code == 200
+
+    expected_content = {
+          'dtool_lookup_server_retrieve_plugin_mongo': dtool_lookup_server_retrieve_plugin_mongo.__version__,
     }
 
     response = json.loads(r.data.decode("utf-8"))
