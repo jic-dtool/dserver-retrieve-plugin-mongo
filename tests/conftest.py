@@ -25,7 +25,8 @@ def snowwhite_token():
 @pytest.fixture
 def tmp_app_with_users(request):
     """Provide app with users"""
-    from dtool_lookup_server import create_app, sql_db, retrieve, search
+    from flask import current_app
+    from dtool_lookup_server import create_app, sql_db
     from dtool_lookup_server.utils import (
         register_users,
         register_base_uri,
@@ -38,6 +39,7 @@ def tmp_app_with_users(request):
         "API_TITLE": 'dtool-lookup-server API',
         "API_VERSION": 'v1',
         "OPENAPI_VERSION": '3.0.2',
+        "CONFIG_SECRETS_TO_OBFUSCATE": [],
         "SECRET_KEY": "secret",
         "FLASK_ENV": "development",
         "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:",
@@ -82,8 +84,8 @@ def tmp_app_with_users(request):
 
     @request.addfinalizer
     def teardown():
-        retrieve.client.drop_database(tmp_mongo_db_name)
-        search.client.drop_database(tmp_mongo_db_name)
+        current_app.retrieve.client.drop_database(tmp_mongo_db_name)
+        current_app.search.client.drop_database(tmp_mongo_db_name)
         sql_db.session.remove()
 
     return app.test_client()
