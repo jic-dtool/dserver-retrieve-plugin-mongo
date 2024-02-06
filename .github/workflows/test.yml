@@ -16,8 +16,8 @@ jobs:
       matrix:
         python-version: ['3.7', '3.8', '3.9', '3.10']
         mongodb-version: ['4.2', '4.4', '5.0', '6.0']
-        dtool-lookup-server-version: [ main ]
-        dtool-lookup-server-search-plugin-mongo-version: [ main ]
+        dserver-version: [ main ]
+        dserver-search-plugin-mongo-version: [ main ]
 
 
     steps:
@@ -44,8 +44,8 @@ jobs:
     - name: Install server refactor and search plugin
       run: | 
         # This should move into the strategy matrix once released
-        pip install git+https://github.com/jotelha/dtool-lookup-server.git@${{ matrix.dtool-lookup-server-version }}
-        pip install git+https://github.com/jotelha/dtool-lookup-server-search-plugin-mongo.git@${{ matrix.dtool-lookup-server-search-plugin-mongo-version }}
+        pip install git+https://github.com/jotelha/dserver.git@${{ matrix.dserver-version }}
+        pip install git+https://github.com/jotelha/dserver-search-plugin-mongo.git@${{ matrix.dserver-search-plugin-mongo-version }}
 
     - name: Install own requirements
       run: |
