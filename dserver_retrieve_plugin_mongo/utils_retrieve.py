@@ -7,14 +7,14 @@ import pymongo.errors
 
 from pymongo import MongoClient
 
-from dtool_lookup_server import RetrieveABC, ValidationError, UnknownURIError
+from dserver import RetrieveABC, ValidationError, UnknownURIError
 
-from dtool_lookup_server.date_utils import (
+from dserver.date_utils import (
     extract_created_at_as_datetime,
     extract_frozen_at_as_datetime,
 )
 
-from dtool_lookup_server_retrieve_plugin_mongo.config import (
+from dserver_retrieve_plugin_mongo.config import (
     Config, CONFIG_SECRETS_TO_OBFUSCATE)
 
 

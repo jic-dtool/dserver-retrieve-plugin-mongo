@@ -26,8 +26,8 @@ def snowwhite_token():
 def tmp_app_with_users(request):
     """Provide app with users"""
     from flask import current_app
-    from dtool_lookup_server import create_app, sql_db
-    from dtool_lookup_server.utils import (
+    from dserver import create_app, sql_db
+    from dserver.utils import (
         register_users,
         register_base_uri,
         update_permissions,
@@ -36,7 +36,7 @@ def tmp_app_with_users(request):
     tmp_mongo_db_name = random_string()
 
     config = {
-        "API_TITLE": 'dtool-lookup-server API',
+        "API_TITLE": 'dserver API',
         "API_VERSION": 'v1',
         "OPENAPI_VERSION": '3.0.2',
         "CONFIG_SECRETS_TO_OBFUSCATE": [],
