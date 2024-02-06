@@ -19,7 +19,6 @@ jobs:
         dserver-version: [ main ]
         dserver-search-plugin-mongo-version: [ main ]
 
-
     steps:
     - name: Git checkout
       uses: actions/checkout@v3
