@@ -14,6 +14,7 @@ Added
 Changed
 ^^^^^^^
 
+- Rebranded from dtool-lookup-server to dserver
 
 Deprecated
 ^^^^^^^^^^

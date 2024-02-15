@@ -43,8 +43,8 @@ jobs:
     - name: Install server refactor and search plugin
       run: | 
         # This should move into the strategy matrix once released
-        pip install git+https://github.com/jotelha/dserver.git@${{ matrix.dserver-version }}
-        pip install git+https://github.com/jotelha/dserver-search-plugin-mongo.git@${{ matrix.dserver-search-plugin-mongo-version }}
+        pip install git+https://github.com/livMatS/dserver.git@${{ matrix.dserver-version }}
+        pip install git+https://github.com/livMatS/dserver-search-plugin-mongo.git@${{ matrix.dserver-search-plugin-mongo-version }}
 
     - name: Install own requirements
       run: |
