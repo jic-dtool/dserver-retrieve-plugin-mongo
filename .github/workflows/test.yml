@@ -37,7 +37,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         # The following line comes in handy when versioning and packaging 
-        # pip install --upgrade setuptools wheel setuptools-scm[toml] importlib-metadata
+        pip install --upgrade setuptools wheel setuptools-scm[toml] importlib-metadata
         pip install flake8 pytest pytest-cov
 
     - name: Install server refactor and search plugin
