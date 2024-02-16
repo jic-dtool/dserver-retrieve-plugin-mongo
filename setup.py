@@ -1,7 +1,14 @@
+import os
 from setuptools import setup
+from setuptools_scm import get_version
+version = get_version(root='.', relative_to=__file__)
+
+def local_scheme(version):
+    """Skip the local version (eg. +xyz of 0.6.1.dev4+gdf99fe2)
+    to be able to upload to Test PyPI"""
+    return ""
 
 url = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo"
-version = "0.2.0"
 readme = open('README.rst').read()
 
 setup(
@@ -14,7 +21,15 @@ setup(
     include_package_data=True,
     author="Tjelvar Olsson",
     author_email="tjelvar.olsson@gmail.com",
+    use_scm_version={
+        "local_scheme": local_scheme,
+        "root": '.',
+        "relative_to": __file__,
+        "write_to": os.path.join(
+            "dserver_retrieve_plugin_mongo", "version.py"),
+    },
     url=url,
+    setup_requires=['setuptools_scm'],
     install_requires=[
         "pymongo",
         "dtoolcore>=3.18.0",
