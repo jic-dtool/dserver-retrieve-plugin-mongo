@@ -86,23 +86,32 @@ class MongoRetrieve(RetrieveABC):
         except pymongo.errors.DocumentTooLarge as e:
             raise (ValidationError("Dataset has too much metadata: {}".format(e)))
 
-    def get_readme(self, uri):
+    def get_readme(self, uri) -> str:
         item = self.collection.find_one({"uri": uri})
         if item is None:
             raise (UnknownURIError())
         return item["readme"]
 
     def get_manifest(self, uri):
+        """Return a dataset's maifest."""
         item = self.collection.find_one({"uri": uri})
         if item is None:
             raise (UnknownURIError())
         return item["manifest"]
 
     def get_annotations(self, uri):
+        """Return a dataset's annotations."""
         item = self.collection.find_one({"uri": uri})
         if item is None:
             raise (UnknownURIError())
         return item["annotations"]
+
+    def get_tags(self, uri):
+        """Return a dataset's tags."""
+        item = self.collection.find_one({"uri": uri})
+        if item is None:
+            raise (UnknownURIError())
+        return item["tags"]
 
     def get_config(self):
         """Return initial Config object, available app-instance independent."""
