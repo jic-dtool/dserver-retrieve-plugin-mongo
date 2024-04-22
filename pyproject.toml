@@ -16,6 +16,12 @@ dependencies = [
         "dtoolcore>=3.18.0",
         "dtool-lookup-server"
     ]
+test = [
+    "dtool-lookup-server",
+    "dserver-search-plugin-mongo",
+    "pytest",
+    "pytest-cov",
+]
 
 [project.urls]
 Documentation = "https://jic-dtool.github.io/dserver-retrieve-plugin-mongo"
