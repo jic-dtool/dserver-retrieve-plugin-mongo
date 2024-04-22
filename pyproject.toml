@@ -16,6 +16,8 @@ dependencies = [
         "dtoolcore>=3.18.0",
         "dtool-lookup-server"
     ]
+
+[project.optional-dependencies]
 test = [
     "dtool-lookup-server",
     "dserver-search-plugin-mongo",
