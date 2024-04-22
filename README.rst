@@ -31,4 +31,12 @@ functional search plugin, i.e.
     pip install dserver
     pip install dserver-search-plugin-mongo
 
+Installation with the ``[test]`` extension
+
+.. code-block:: bash
+
+    pip install .[test]
+
+installs these essential testing dependencies as well.
+
 Run tests from within repository root with ``pytest``.
