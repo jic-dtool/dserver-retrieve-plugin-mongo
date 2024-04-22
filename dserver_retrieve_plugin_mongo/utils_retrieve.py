@@ -1,8 +1,5 @@
 """Mongo retrieve plugin module."""
 
-import os
-
-import dtoolcore.utils
 import pymongo.errors
 
 from pymongo import MongoClient
