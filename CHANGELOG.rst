@@ -16,7 +16,7 @@ Changed
 ^^^^^^^
 
 - Replace ``setup.py`` by ``pyproject.toml``
-- Rebranded from dtool-lookup-server to dserver
+- Rebranded from ``dtool-lookup-server-retrieve-plugin-mongo`` to shorter dserver ``retrieve-plugin-mongo``
 
 Deprecated
 ^^^^^^^^^^

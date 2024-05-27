@@ -28,7 +28,7 @@ functional search plugin, i.e.
 
 .. code-block:: bash
 
-    pip install dserver
+    pip install dtool-lookup-server
     pip install dserver-search-plugin-mongo
 
 Installation with the ``[test]`` extension
