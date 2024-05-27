@@ -30,7 +30,7 @@ def tmp_app_with_users(request):
     from dserver.utils import (
         register_users,
         register_base_uri,
-        put_permissions,
+        register_permissions,
     )
 
     tmp_mongo_db_name = random_string()
@@ -79,7 +79,7 @@ def tmp_app_with_users(request):
         "users_with_search_permissions": ["grumpy", "sleepy"],
         "users_with_register_permissions": ["grumpy"]
     }
-    put_permissions(base_uri, permissions)
+    register_permissions(base_uri, permissions)
 
     @request.addfinalizer
     def teardown():
