@@ -15,7 +15,7 @@ from pymongo import MongoClient
 
 from dtoolcore import DataSetCreator, DataSet
 
-from dserver.utils import generate_dataset_info
+from dtool_lookup_server.utils import generate_dataset_info
 
 # This tested in this module.
 from dserver_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
