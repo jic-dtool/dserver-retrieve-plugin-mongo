@@ -22,7 +22,8 @@ def test_config_info_route(tmp_app_with_users, snowwhite_token):  # NOQA
 
     response = json.loads(r.data.decode("utf-8"))
 
-    assert compare_nested(expected_content, response)
+    assert "config" in response
+    assert compare_nested(expected_content, response["config"])
 
 
 def test_config_version_route(tmp_app_with_users):  # NOQA
@@ -38,4 +39,5 @@ def test_config_version_route(tmp_app_with_users):  # NOQA
 
     response = json.loads(r.data.decode("utf-8"))
 
-    assert compare_nested(expected_content, response)
+    assert "versions" in response
+    assert compare_nested(expected_content, response["versions"])
