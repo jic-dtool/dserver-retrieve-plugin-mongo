@@ -16,9 +16,8 @@ jobs:
       matrix:
         python-version: ['3.7', '3.8', '3.9', '3.10']
         mongodb-version: ['4.2', '4.4', '5.0', '6.0']
-        dtool-lookup-server-version: [ main ]
-        dtool-lookup-server-search-plugin-mongo-version: [ main ]
-
+        dtool-lookup-server-version: [ master ]
+        dserver-search-plugin-mongo-version: [ main ]
 
     steps:
     - name: Git checkout
@@ -38,14 +37,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         # The following line comes in handy when versioning and packaging 
-        # pip install --upgrade setuptools wheel setuptools-scm[toml] importlib-metadata
+        pip install --upgrade setuptools wheel setuptools-scm[toml] importlib-metadata
         pip install flake8 pytest pytest-cov
 
     - name: Install server refactor and search plugin
       run: | 
         # This should move into the strategy matrix once released
-        pip install git+https://github.com/jotelha/dtool-lookup-server.git@${{ matrix.dtool-lookup-server-version }}
-        pip install git+https://github.com/jotelha/dtool-lookup-server-search-plugin-mongo.git@${{ matrix.dtool-lookup-server-search-plugin-mongo-version }}
+        pip install git+https://github.com/jic-dtool/dtool-lookup-server.git@${{ matrix.dtool-lookup-server-version }}
+        pip install git+https://github.com/livMatS/dserver-search-plugin-mongo.git@${{ matrix.dserver-search-plugin-mongo-version }}
 
     - name: Install own requirements
       run: |

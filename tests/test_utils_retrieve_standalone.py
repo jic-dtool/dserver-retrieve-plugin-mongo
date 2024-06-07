@@ -18,7 +18,7 @@ from dtoolcore import DataSetCreator, DataSet
 from dtool_lookup_server.utils import generate_dataset_info
 
 # This tested in this module.
-from dtool_lookup_server_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
+from dserver_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
 
 
 MONGO_URI = "mongodb://localhost:27017"
@@ -26,7 +26,7 @@ MONGO_URI = "mongodb://localhost:27017"
 
 def random_string(
     size=9,
-    prefix="test_dtool_lookup_server_mongo_retreive",
+    prefix="test_dserver_mongo_retreive",
     chars=string.ascii_uppercase + string.ascii_lowercase + string.digits
 ):
     return prefix + ''.join(random.choice(chars) for _ in range(size))

@@ -10,10 +10,13 @@ This change log uses principles from `keep a changelog <http://keepachangelog.co
 Added
 ^^^^^
 
+- Tag retrieval function
 
 Changed
 ^^^^^^^
 
+- Replace ``setup.py`` by ``pyproject.toml``
+- Rebranded from ``dtool-lookup-server-retrieve-plugin-mongo`` to shorter ``dserver-retrieve-plugin-mongo``
 
 Deprecated
 ^^^^^^^^^^

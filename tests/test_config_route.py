@@ -1,7 +1,7 @@
 """Test the /config blueprint route."""
 
 import json
-import dtool_lookup_server_retrieve_plugin_mongo
+import dserver_retrieve_plugin_mongo
 
 from .utils import compare_nested
 
@@ -22,7 +22,8 @@ def test_config_info_route(tmp_app_with_users, snowwhite_token):  # NOQA
 
     response = json.loads(r.data.decode("utf-8"))
 
-    assert compare_nested(expected_content, response)
+    assert "config" in response
+    assert compare_nested(expected_content, response["config"])
 
 
 def test_config_version_route(tmp_app_with_users):  # NOQA
@@ -33,9 +34,10 @@ def test_config_version_route(tmp_app_with_users):  # NOQA
     assert r.status_code == 200
 
     expected_content = {
-          'dtool_lookup_server_retrieve_plugin_mongo': dtool_lookup_server_retrieve_plugin_mongo.__version__,
+          'dserver_retrieve_plugin_mongo': dserver_retrieve_plugin_mongo.__version__,
     }
 
     response = json.loads(r.data.decode("utf-8"))
 
-    assert compare_nested(expected_content, response)
+    assert "versions" in response
+    assert compare_nested(expected_content, response["versions"])
