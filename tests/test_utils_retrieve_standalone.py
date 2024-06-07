@@ -88,13 +88,13 @@ class _MockApp(object):
 ##############################################################################
 
 def test_is_subclass_of_abc():
-    from dserver import RetrieveABC
+    from dtool_lookup_server import RetrieveABC
     assert issubclass(MongoRetrieve, RetrieveABC)
 
 
 def test_functional(tmp_mongo_db):  # NOQA
 
-    from dserver import UnknownURIError
+    from dtool_lookup_server import UnknownURIError
 
     ds_info = create_dataset_info(
         base_uri="s3://store",
@@ -143,7 +143,7 @@ def test_functional(tmp_mongo_db):  # NOQA
 
 def test_register_raises_when_metadata_too_large(tmp_mongo_db):  # NOQA
 
-    from dserver import ValidationError
+    from dtool_lookup_server import ValidationError
 
     readme_lines = ["---"]
     for i in range(100000):
