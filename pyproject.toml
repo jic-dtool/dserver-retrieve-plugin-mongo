@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dserver-retrieve-plugin-mongo"
 description = "Retrieve plugin for dserver using mongodb"
+readme = "README.rst"
 license = {file = "LICENSE"}
 authors = [
     {name = "Tjelvar Olsson", email = "tjelvar.olsson@gmail.com"},
