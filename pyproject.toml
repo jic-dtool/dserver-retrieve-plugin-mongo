@@ -15,12 +15,12 @@ dynamic = ["version"]
 dependencies = [
         "pymongo",
         "dtoolcore>=3.18.0",
-        "dtool-lookup-server"
+        "dservercore"
     ]
 
 [project.optional-dependencies]
 test = [
-    "dtool-lookup-server",
+    "dservercore",
     "dserver-search-plugin-mongo",
     "pytest",
     "pytest-cov",
@@ -39,5 +39,5 @@ write_to = "dserver_retrieve_plugin_mongo/version.py"
 [tool.setuptools]
 packages = ["dserver_retrieve_plugin_mongo"]
 
-[project.entry-points."dtool_lookup_server.retrieve"]
+[project.entry-points."dservercore.retrieve"]
 "MongoRetrieve" = "dserver_retrieve_plugin_mongo.utils_retrieve:MongoRetrieve"
