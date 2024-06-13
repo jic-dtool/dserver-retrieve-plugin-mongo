@@ -16,7 +16,7 @@ jobs:
       matrix:
         python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
         mongodb-version: ['4.2', '4.4', '5.0', '6.0']
-        dservercore-version: [ master ]
+        dservercore-version: [ main ]
         dserver-search-plugin-mongo-version: [ main ]
 
     steps:
