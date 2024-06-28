@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dserver-retrieve-plugin-mongo"
 description = "Retrieve plugin for dserver using mongodb"
+readme = "README.rst"
 license = {file = "LICENSE"}
 authors = [
     {name = "Tjelvar Olsson", email = "tjelvar.olsson@gmail.com"},
@@ -14,19 +15,19 @@ dynamic = ["version"]
 dependencies = [
         "pymongo",
         "dtoolcore>=3.18.0",
-        "dtool-lookup-server"
+        "dservercore"
     ]
 
 [project.optional-dependencies]
 test = [
-    "dtool-lookup-server",
+    "dservercore",
     "dserver-search-plugin-mongo",
     "pytest",
     "pytest-cov",
 ]
 
 [project.urls]
-Documentation = "https://jic-dtool.github.io/dserver-retrieve-plugin-mongo"
+Documentation = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob/main/README.rst"
 Repository = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo"
 Changelog = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob/main/CHANGELOG.rst"
 
@@ -38,5 +39,5 @@ write_to = "dserver_retrieve_plugin_mongo/version.py"
 [tool.setuptools]
 packages = ["dserver_retrieve_plugin_mongo"]
 
-[project.entry-points."dtool_lookup_server.retrieve"]
+[project.entry-points."dservercore.retrieve"]
 "MongoRetrieve" = "dserver_retrieve_plugin_mongo.utils_retrieve:MongoRetrieve"

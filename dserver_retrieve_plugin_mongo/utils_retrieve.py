@@ -4,9 +4,9 @@ import pymongo.errors
 
 from pymongo import MongoClient
 
-from dtool_lookup_server import RetrieveABC, ValidationError, UnknownURIError
+from dservercore import RetrieveABC, ValidationError, UnknownURIError
 
-from dtool_lookup_server.date_utils import (
+from dservercore.date_utils import (
     extract_created_at_as_datetime,
     extract_frozen_at_as_datetime,
 )

@@ -15,7 +15,7 @@ from pymongo import MongoClient
 
 from dtoolcore import DataSetCreator, DataSet
 
-from dtool_lookup_server.utils import generate_dataset_info
+from dservercore.utils import generate_dataset_info
 
 # This tested in this module.
 from dserver_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
@@ -88,13 +88,13 @@ class _MockApp(object):
 ##############################################################################
 
 def test_is_subclass_of_abc():
-    from dtool_lookup_server import RetrieveABC
+    from dservercore import RetrieveABC
     assert issubclass(MongoRetrieve, RetrieveABC)
 
 
 def test_functional(tmp_mongo_db):  # NOQA
 
-    from dtool_lookup_server import UnknownURIError
+    from dservercore import UnknownURIError
 
     ds_info = create_dataset_info(
         base_uri="s3://store",
@@ -143,7 +143,7 @@ def test_functional(tmp_mongo_db):  # NOQA
 
 def test_register_raises_when_metadata_too_large(tmp_mongo_db):  # NOQA
 
-    from dtool_lookup_server import ValidationError
+    from dservercore import ValidationError
 
     readme_lines = ["---"]
     for i in range(100000):
