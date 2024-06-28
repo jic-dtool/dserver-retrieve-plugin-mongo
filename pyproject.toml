@@ -27,7 +27,7 @@ test = [
 ]
 
 [project.urls]
-Documentation = "https://dserver-retrieve-plugin-mongo.readthedocs.io"
+Documentation = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob/main/README.rst"
 Repository = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo"
 Changelog = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob/main/CHANGELOG.rst"
 
