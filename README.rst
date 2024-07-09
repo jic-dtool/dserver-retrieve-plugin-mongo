@@ -10,8 +10,10 @@ dserver Retrieve Plugin Mongo
     :target: https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/tags
 .. |test| image:: https://img.shields.io/github/actions/workflow/status/jic-dtool/dserver-retrieve-plugin-mongo/test.yml?branch=main&label=tests
     :target: https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/actions/workflows/test.yml
+.. |zenodo| image:: https://zenodo.org/badge/564037054.svg
+    :target: https://zenodo.org/doi/10.5281/zenodo.12702159
 
-|dtool| |pypi| |tag| |test|
+|dtool| |pypi| |tag| |test| |zenodo|
 
 Retrieve plugin for dserver using mongodb
 
