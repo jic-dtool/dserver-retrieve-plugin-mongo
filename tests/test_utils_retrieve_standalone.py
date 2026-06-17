@@ -22,8 +22,7 @@ from dservercore.utils import generate_dataset_info
 # This tested in this module.
 from dserver_retrieve_plugin_mongo.utils_retrieve import MongoRetrieve
 
-
-MONGO_URI = os.environ.get("TEST_MONGO_URI", "mongodb://localhost:27017")
+MONGO_URI = os.environ.get("TEST_MONGO_URI", "mongodb://localhost:27017/")
 
 
 def random_string(
@@ -42,6 +41,7 @@ def tmp_mongo_db(request):
     @request.addfinalizer
     def teardown():
         client.drop_database(tmp_mongo_db_name)
+        client.close()
 
     return tmp_mongo_db_name
 
