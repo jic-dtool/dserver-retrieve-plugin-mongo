@@ -1,22 +1,24 @@
 [build-system]
-requires = ["setuptools>=42", "setuptools_scm[toml]>=6.3"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_scm"]
+build-backend = "flit_scm:buildapi"
 
 [project]
 name = "dserver-retrieve-plugin-mongo"
 description = "Retrieve plugin for dserver using mongodb"
 readme = "README.rst"
-license = {file = "LICENSE"}
+license = {text = "MIT"}
 authors = [
     {name = "Tjelvar Olsson", email = "tjelvar.olsson@gmail.com"},
     {name = "Johannes L. Hörmann", email = "johannes.laurin@gmail.com"},
 ]
 dynamic = ["version"]
+requires-python = ">=3.10"
 dependencies = [
-        "pymongo",
-        "dtoolcore>=3.18.0",
-        "dservercore"
-    ]
+    "pymongo",
+    "PyYAML",
+    "dtoolcore>=3.18.0",
+    "dservercore"
+]
 
 [project.optional-dependencies]
 test = [
@@ -31,13 +33,17 @@ Documentation = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob
 Repository = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo"
 Changelog = "https://github.com/jic-dtool/dserver-retrieve-plugin-mongo/blob/main/CHANGELOG.rst"
 
+[project.entry-points."dservercore.retrieve"]
+MongoRetrieve = "dserver_retrieve_plugin_mongo.utils_retrieve:MongoRetrieve"
+
+[tool.flit.module]
+name = "dserver_retrieve_plugin_mongo"
+
 [tool.setuptools_scm]
 version_scheme = "guess-next-dev"
 local_scheme = "no-local-version"
 write_to = "dserver_retrieve_plugin_mongo/version.py"
 
-[tool.setuptools]
-packages = ["dserver_retrieve_plugin_mongo"]
-
-[project.entry-points."dservercore.retrieve"]
-"MongoRetrieve" = "dserver_retrieve_plugin_mongo.utils_retrieve:MongoRetrieve"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=dserver_retrieve_plugin_mongo --cov-report=term-missing"
