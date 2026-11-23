@@ -1,6 +1,7 @@
 """Test the /config blueprint route."""
 
 import json
+import os
 import dserver_retrieve_plugin_mongo
 
 from .utils import compare_nested
@@ -17,7 +18,7 @@ def test_config_info_route(tmp_app_with_users, snowwhite_token):  # NOQA
 
     expected_content = {
           'retrieve_mongo_collection': 'datasets',
-          'retrieve_mongo_uri': 'mongodb://localhost:27017/',
+          'retrieve_mongo_uri': os.environ.get("TEST_MONGO_URI", "mongodb://localhost:27017/"),
     }
 
     response = json.loads(r.data.decode("utf-8"))
