@@ -10,6 +10,8 @@ This change log uses principles from `keep a changelog <http://keepachangelog.co
 Changed
 ^^^^^^^
 
+- Build system changed from ``setuptools`` to ``hatchling`` with
+  ``hatch-vcs``; the version is still derived from git tags
 - Dropped support for Python 3.7–3.9; minimum is now Python 3.10
 - Updated CI Python matrix to 3.10–3.13; updated MongoDB matrix to 5.0–8.0
 

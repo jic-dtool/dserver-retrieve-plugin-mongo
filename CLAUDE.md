@@ -102,11 +102,11 @@ can initialise against the same temp database.
 
 ## Versioning & packaging
 
-The build backend is **flit** (`flit_scm:buildapi`, configured in `pyproject.toml`); there is no
+The build backend is **hatchling** (`hatchling.build`, configured in `pyproject.toml`); there is no
 `setup.cfg`/`setup.py`. pytest and coverage config also live in `pyproject.toml` under
 `[tool.pytest.ini_options]`.
 
-Version is managed by `setuptools_scm` (via `flit_scm`) from git tags (`guess-next-dev`,
+Version is managed by `hatch-vcs` (which uses setuptools_scm) from git tags (`guess-next-dev`,
 `no-local-version`), written to `dserver_retrieve_plugin_mongo/version.py` (generated, not committed).
 `__init__.py` resolves the version at runtime first via `importlib.metadata`, falling back to the
 generated `version.py`.
